@@ -8,34 +8,37 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @Transactional
-class JdbcMemoRepositoryTest {
+class JpaMemoRepositoryTest {
     @Autowired
-    JdbcMemoRepository jdbcMemoRepository;
+    JpaMemoRepository jpaMemoRepository;
 
     @Test
     void insertMemoTest() {
         //given
-        Memo newMemo = new Memo(2, "insertMemoTest");
+        Memo memo = new Memo(10, "this is jpa memo");
 
         //when
-        jdbcMemoRepository.save(newMemo);
+        jpaMemoRepository.save(memo);
 
         //then
-        Optional<Memo> result = jdbcMemoRepository.findById(2);
-        assertEquals(result.get().getText() , "insertMemoTest");
+        List<Memo> memoList = jpaMemoRepository.findAll();
+        assertTrue(memoList.size()>0);
     }
 
     @Test
-    void fintAllMemoTest() {
+    void findByIdTest() {
         //given
-        List<Memo> memoList = jdbcMemoRepository.findAll();
+        Memo newMemo = new Memo(11, "jpa");
         //when
-        System.out.println(memoList);
+        Memo memo = jpaMemoRepository.save(newMemo);
+        System.out.println(memo.getId());
         //then
-        assertNotNull(memoList);
+        Optional<Memo> result = jpaMemoRepository.findById(memo.getId());
+        assertEquals(result.get().getText(), "jpa");
     }
 }
