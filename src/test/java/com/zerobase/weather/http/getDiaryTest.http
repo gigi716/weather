@@ -1,2 +1,0 @@
-### get diary test
-GET http://localhost:8080/read/diary?date=2024-03-01

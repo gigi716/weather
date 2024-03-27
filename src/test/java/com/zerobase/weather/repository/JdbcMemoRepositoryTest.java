@@ -30,7 +30,7 @@ class JdbcMemoRepositoryTest {
     }
 
     @Test
-    void fintAllMemoTest() {
+    void findAllMemoTest() {
         //given
         List<Memo> memoList = jdbcMemoRepository.findAll();
         //when

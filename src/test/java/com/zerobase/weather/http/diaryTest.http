@@ -1,0 +1,15 @@
+### get diary test
+GET http://localhost:8080/read/diary?date=2024-03-03
+
+
+### get diaries test
+GET http://localhost:8080/read/diaries?startDate=2024-03-01&endDate=2024-03-03
+
+### delete diary test
+DELETE http://localhost:8080/delete/diary?date=2024-03-02
+
+
+
+
+
+
