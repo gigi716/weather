@@ -3,7 +3,6 @@ package com.zerobase.weather.controller;
 import com.zerobase.weather.domain.Diary;
 import com.zerobase.weather.service.DiaryService;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;

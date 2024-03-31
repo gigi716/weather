@@ -1,12 +1,17 @@
 ### get diary test
-GET http://localhost:8080/read/diary?date=2024-03-03
+GET http://localhost:8080/read/diary?date=2024-03-31
 
 ### get diaries test
-GET http://localhost:8080/read/diaries?startDate=2024-03-01&endDate=2024-03-03
+GET http://localhost:8080/read/diaries?startDate=2024-03-01&endDate=2024-03-31
 
 ### delete diary test
-DELETE http://localhost:8080/delete/diary?date=2024-03-02
+DELETE http://localhost:8080/delete/diary?date=2024-03-31
 
+### create diary test
+POST http://localhost:8080/create/diary?date=2024-03-30
+Content-Type: application/json
+
+"hi"
 
 
 
